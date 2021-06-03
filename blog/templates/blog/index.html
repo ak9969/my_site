@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static%}
+{% block title %}
+  My Blog
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post.css" %}">
+  <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+{% block content %}
+  <!-- <header id="main-navigation">
+    <h1><a href=""> Akshat's Blog</a></h1>
+    <nav>
+      <a href=""> All Posts</a>
+    </nav>
+  </header> -->
+
+  <section id="welcome">
+    <header>
+      <img src="{% static "blog/images/My.jpeg"%}" alt="Akshat-Author of this blog"/>
+      <h2>Cricket Blog</h2>
+    </header>
+    <p> Hi, I am Akshat I love to wirte about Cricket and can make websites</p>
+  </section>
+  <section id="latest-posts">
+    <h2>Latest Blog Posts</h2>
+    <ul>
+      {% for post in posts%}
+      {% include "blog/includes/post.html"%}
+      {%endfor%}
+    </ul>
+  </section>
+<section id="about">
+  <h2>What I do</h2>
+  <p>Lorem ipsum</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+</section>
+{% endblock %}
